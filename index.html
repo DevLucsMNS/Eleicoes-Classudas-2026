@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>III Eleição Presidencial - ClasSudos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body>
+
+    <div id="loader" class="loader-wrapper">
+        <div class="loader-content">
+            <img src="img/favicon.png" alt="Logo ClasSudos" class="loader-logo">
+            <p class="loader-text">AUTENTICANDO COMITÊ...</p>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <header class="hero">
+        <div class="floating-container">
+            <img src="img/grupo1.jpeg" class="float-img img1" alt="Meme 1">
+            <img src="img/grupo2.jpeg" class="float-img img2" alt="Meme 2">
+        </div>
+        <div class="hero-content">
+            <p class="subtitle">III ELEIÇÃO PRESIDENCIAL</p>
+            <h1 class="main-title">O Futuro de 2026 em Suas Mãos</h1>
+        </div>
+    </header>
+
+    <main>
+        <section id="comite" class="section">
+            <h2 class="section-title">Comitê Presidencial</h2>
+            <div class="grid-container">
+                <div class="member-card">
+                    <img src="img/eu.jpg" alt="Foto do Lucas" class="profile-img">
+                    <h3>Lucas</h3>
+                    <p class="role">Fundador & Líder Supremo</p>
+                </div>
+                <div class="member-card">
+                    <img src="img/beatriz.png" alt="Foto da Beatriz" class="profile-img">
+                    <h3>Beatriz</h3>
+                    <p class="role">Grande Chanceler</p>
+                </div>
+                <div class="member-card">
+                    <img src="img/emilly.jpeg" alt="Foto da Emilly" class="profile-img">
+                    <h3>Emilly</h3>
+                    <p class="role">Estagiária</p>
+                </div>
+            </div>
+        </section>
+
+            <!-- Abaixo é colocado as chapas, eis aqui o código para isso:
+                 <div class="chapa-card">
+                    <img src="img/partido1.jpg" alt="Logo Partido" class="profile-img">
+                    <div class="chapa-img"></div>
+                    <h3>Seu Partido Aqui</h3>
+                    <a href="partido-a.html" class="btn-secondary">Ver Propostas</a>
+                    -->
+
+        <section id="candidatos" class="section alt-bg">
+    <h2 class="section-title">Os Partidos</h2>
+    <div class="grid-container">
+        
+        <div class="chapa-card" onclick="toggleParty(this)">
+            <div class="chapa-main-info">
+                <div class="chapa-img"></div>
+                <h3>Seu Partido Aqui</h3>
+                <p class="tap-hint">Clique para ver os integrantes</p>
+                <span class="entry-arrow">▼</span>
+            </div>
+            
+            <div class="chapa-content">
+                <div class="members-list">
+                    <h4>Participantes:</h4>
+                    <ul>
+                        <li><strong>Presidente:</strong>  </li>
+                        <li><strong>Vice-Presidente:</strong>  </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+                <div class="chapa-card" onclick="toggleParty(this)">
+            <div class="chapa-main-info">
+                <div class="chapa-img"></div>
+                <h3>Seu Partido Aqui</h3>
+                <p class="tap-hint">Clique para ver os integrantes</p>
+                <span class="entry-arrow">▼</span>
+            </div>
+            
+            <div class="chapa-content">
+                <div class="members-list">
+                    <h4>Participantes:</h4>
+                    <ul>
+                        <li><strong>Presidente:</strong>  </li>
+                        <li><strong>Vice-Presidente:</strong>  </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+        <section id="historico" class="section">
+            <h2 class="section-title">Histórico Presidencial</h2>
+            <div class="history-list">
+                <div class="history-entry" onclick="toggleHistory(this)">
+                    <div class="entry-header">
+                        <span class="entry-year">2024</span>
+                        <span class="entry-name">Danilo - O Primeiro ClasSudo</span>
+                        <span class="entry-arrow">▼</span>
+                    </div>
+                    <div class="entry-content">
+                        <div class="content-flex">
+                            <img src="img/danilo.jpeg" alt="Danilo" class="history-pfp">
+                            <p>Danilo, após acusar Igor de usurpar seu trono, fez o grupo passar por um rigoroso processo democrático (muita discussão) e foi democraticamente eleito o primeiro presidente dos Classudos da história. Seu mandato foi marcado por todas as vezes em que chamou todo mundo para sair e todos recusaram.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="history-entry" onclick="toggleHistory(this)">
+                    <div class="entry-header">
+                        <span class="entry-year">2025</span>
+                        <span class="entry-name">Juliana - A Era das Mudanças</span>
+                        <span class="entry-arrow">▼</span>
+                    </div>
+                    <div class="entry-content">
+                        <div class="content-flex">
+                            <img src="img/juliana.png" alt="Juliana" class="history-pfp">
+                            <p>Juliana, por mais que ninguém se lembre, tinha Danilo como seu vice, mas, sozinha, após uma árdua disputa contra Igor e Davi nas eleições, foi eleita democraticamente a segunda presidente da história dos Classudos, caindo assim em lágrimas de felicidade enquanto recebia seu certificado. Seu mandato foi marcado pela presença, apoio e criatividade ao longo do ano, ao lado de seu amado, criando a primeiríssima edição dos Classudos Awards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="urna" class="section urna-section">
+            <div class="urna-box">
+                <p>O prazo encerra em 18/01/2026</p>
+                <a href="https://forms.gle/3gqJ1323L2ZEeEQw8" class="btn-primary pulse">SE CANDIDATAR</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Comitê ClasSudos. Direitos Reservados à Alta Cúpula.</p>
+        <p style="font-size: 0.7rem; margin-top: 10px;">Desenvolvido com ☕ e HTML por Lucas</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function criarGota() {
+            const gota = document.createElement('div');
+            gota.classList.add('gota-dourada');
+            gota.style.left = Math.random() * 100 + 'vw';
+            gota.style.animationDuration = Math.random() * 2 + 3 + 's';
+            gota.style.opacity = Math.random();
+            document.body.appendChild(gota);
+            setTimeout(() => { gota.remove(); }, 5000);
+        }
+        setInterval(criarGota, 300);
+
+        function toggleHistory(elemento) {
+            elemento.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

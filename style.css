@@ -1,0 +1,533 @@
+/* Variáveis para facilitar sua vida de dev */
+:root {
+    --gold: #d4af37;
+    --dark: #0a0a0a;
+    --gray: #1a1a1a;
+    --white: #ffffff;
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--dark);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+/* HEADER COM EFEITO FLUTUANTE */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(to bottom, #161616 0%, #0a0a0a 25%);
+    z-index: 0;
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+}
+
+.hero-content.iniciar-animacao {
+    animation: aberturaSolene 2.5s ease-out forwards;
+}
+
+.main-title {
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    animation: fadeIn 2s ease-out;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #f8f8f8; /* Um tom mais claro ou diferente do título principal */
+    text-transform: uppercase;
+    letter-spacing: 4px; /* O segredo da elegância */
+    margin-bottom: 15px;
+    font-weight: 600;
+    animation-delay: 0.2s;
+    opacity: 0; /* Começa invisível para a animação funcionar */
+}
+
+.hero-content.iniciar-animacao .subtitle {
+    animation: aberturaSolene 2s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* Imagens Flutuantes */
+.floating-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.float-img {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    animation: float 6s infinite ease-in-out;
+    z-index: 1; 
+}
+
+.img1 { top: 20%; left: 15%; animation-delay: 0s; }
+.img2 { top: 15%; right: 20%; animation-delay: 2s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-30px) rotate(10deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* SEÇÕES GERAIS */
+.section { padding: 100px 20px; text-align: center; }
+.section-alt-start {
+    background: linear-gradient(to bottom, var(--dark) 0%, var(--gray) 100%);
+    padding-bottom: 0;
+}
+
+.section-alt-middle {
+    background-color: var(--gray);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.section-alt-end {
+    background: linear-gradient(to bottom, var(--gray) 0%, var(--dark) 100%);
+    padding-top: 0;
+}
+.section-title { font-size: 2.5rem; margin-bottom: 50px; color: var(--gold); }
+
+/* CARDS */
+.grid-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.member-card, .chapa-card {
+    background: #222;
+    padding: 30px;
+    border-radius: 15px;
+    width: 280px;
+    border: 1px solid #333;
+    transition: var(--transition);
+}
+
+.member-card:hover, .chapa-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.photo-placeholder, .chapa-img {
+    width: 120px;
+    height: 120px;
+    background: #444;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+}
+
+/* BOTÕES */
+.btn-primary {
+    background: var(--gold);
+    color: black;
+    padding: 20px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.btn-secondary {
+    color: var(--gold);
+    text-decoration: none;
+    border: 1px solid var(--gold);
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.pulse { animation: pulseAnim 2s infinite; }
+
+@keyframes pulseAnim {
+    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(212, 175, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+/* HISTÓRICO */
+.history-grid { max-width: 600px; margin: 0 auto; }
+.history-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid #333;
+}
+.year { font-weight: bold; color: var(--gold); font-size: 1.5rem; }
+
+/* CHUVA DOURADA */
+.gota-dourada {
+    position: fixed;
+    top: -10px;
+    width: 2px;
+    height: 10px;
+    background: var(--gold);
+    box-shadow: 0 0 5px var(--gold);
+    border-radius: 50%;
+    pointer-events: none; /* Para não atrapalhar cliques */
+    z-index: 100;
+    animation: cair linear forwards;
+}
+
+@keyframes cair {
+    to {
+        transform: translateY(105vh);
+    }
+}
+
+@keyframes aberturaSolene {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Estilo para as fotos de perfil redondas */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover; /* Isso garante que a foto não fique esticada */
+    border: 2px solid var(--gold);
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* HISTÓRICO INTERATIVO */
+.history-container { max-width: 700px; margin: 0 auto; text-align: left; }
+
+.history-item {
+    background: #1a1a1a;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+}
+
+.history-item:hover { border-color: var(--gold); }
+
+.history-header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.history-header h3 { margin: 0 20px; flex-grow: 1; font-size: 1.1rem; }
+.arrow { color: var(--gold); transition: transform 0.3s; }
+
+/* Detalhes ocultos por padrão */
+.history-details {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    transition: all 0.5s ease-in-out;
+    background: #111;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-img-small {
+    width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold);
+}
+
+/* Classe que o Javascript vai adicionar quando clicar */
+.history-item.active .history-details {
+    max-height: 300px;
+    padding: 20px;
+    border-top: 1px solid #333;
+}
+
+.history-item.active .arrow { transform: rotate(180deg); }
+
+/* Urna */
+.urna-box h2 { margin-bottom: 10px; }
+.urna-box p {
+    color: #aaa;
+    font-style: italic;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* Footer */
+footer {
+    background: #000;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    border-top: 2px solid var(--gray);
+}
+
+footer p {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.history-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.history-entry {
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.history-entry:hover {
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 10px;
+}
+
+.entry-year {
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 1.4rem;
+    min-width: 80px;
+}
+
+.entry-name {
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 20px;
+    font-size: 1.1rem;
+}
+
+.entry-arrow {
+    color: var(--gold);
+    transition: transform 0.3s;
+}
+
+/* A GAVETA */
+.entry-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(90deg, rgba(212, 175, 55, 0.05) 0%, rgba(0,0,0,0) 100%);
+}
+
+.history-entry.active .entry-content {
+    max-height: 500px; /* Um valor alto o suficiente para caber o texto */
+    padding-bottom: 20px;
+}
+
+.history-entry.active .entry-arrow {
+    transform: rotate(180deg);
+}
+
+.content-flex {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 30px;
+    border-left: 3px solid var(--gold); /* Linha de destaque lateral */
+    margin: 10px 20px;
+}
+
+.content-flex p {
+    font-family: 'Georgia', serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ddd;
+    text-align: justify;
+    max-width: 500px; /* Evita que o texto estique demais */
+}
+
+
+.history-pfp {
+   width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    flex-shrink: 0; /* Impede a foto de amassar se o texto for grande */
+}
+
+#candidatos {
+    background-color: #0a0a0a;
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+/* TELA DE LOADING */
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a0a0a; /* Fundo preto puro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Fica acima de TUDO */
+    transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-logo {
+    width: 100px;
+    margin-bottom: 20px;
+    animation: pulseLogo 2s infinite ease-in-out;
+}
+
+.loader-text {
+    color: var(--gold);
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+
+/* Barra de progresso infinita apenas visual */
+.loader-bar {
+    width: 150px;
+    height: 2px;
+    background: #222;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.loader-bar::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 100%;
+    background: var(--gold);
+    animation: loadingBar 1.5s infinite ease-in-out;
+}
+
+/* ANIMAÇÕES DO LOADING */
+@keyframes pulseLogo {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0)); }
+    50% { transform: scale(1.1); filter: drop-shadow(0 0 15px var(--gold)); }
+}
+
+@keyframes loadingBar {
+    0% { left: -50px; }
+    100% { left: 150px; }
+}
+
+/* Classe que o JS vai adicionar para sumir com a tela */
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Ajuste no Card para suportar a gaveta */
+.chapa-card {
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s, transform 0.3s;
+    padding-bottom: 15px;
+}
+
+.chapa-main-info {
+    text-align: center;
+    width: 100%;
+}
+
+.tap-hint {
+    font-size: 0.8rem;
+    color: var(--gold);
+    opacity: 0.6;
+    margin-top: 5px;
+}
+
+/* Estilo da Gaveta do Partido */
+.chapa-content {
+    max-height: 0;
+    opacity: 0;
+    width: 100%;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.chapa-card.active .chapa-content {
+    max-height: 500px;
+    opacity: 1;
+    padding: 20px 10px;
+}
+
+.chapa-card.active .entry-arrow {
+    transform: rotate(180deg);
+}
+
+.members-list {
+    text-align: left;
+}
+
+.members-list h4 {
+    color: var(--gold);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.members-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.members-list li {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    padding-bottom: 4px;
+}
