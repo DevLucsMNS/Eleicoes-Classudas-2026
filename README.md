@@ -30,12 +30,6 @@ O projeto foi construído utilizando tecnologias puras (Vanilla), priorizando a 
 * **CSS3:** Variáveis nativas, animações personalizadas e design responsivo.
 * **JavaScript (ES6+):** Lógica de transição de telas, manipulação de classes CSS e gerenciamento de eventos de carga.
 
-## 📅 Cronograma Eleitoral
-
-* **Abertura de Inscrições:** Janeiro de 2026.
-* **Encerramento do Prazo:** 18 de Janeiro de 2026 às 23:59.
-* **Divulgação de Resultados:** Imediatamente após a auditoria do Comitê.
-
 ## ✒️ Desenvolvedor
 
 * **Lucas** - *Desenvolvimento de Software & ADS na Cruzeiro do Sul*.
