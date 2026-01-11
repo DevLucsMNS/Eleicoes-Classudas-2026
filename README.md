@@ -20,6 +20,8 @@ Este sistema atua como o hub central das eleições, permitindo que os membros d
 * **Efeitos Visuais Dinâmicos:** Chuva dourada via manipulação do DOM e transições suaves com curvas *cubic-bezier*.
 * **Integração de Candidaturas:** Conector para o edital de convocação oficial com prazos de encerramento automatizados.
 
+https://github.com/user-attachments/assets/e55269e4-b51e-4141-82a4-3ca90b593ec6
+
 ## 🛠️ Tecnologias Utilizadas
 
 O projeto foi construído utilizando tecnologias puras (Vanilla), priorizando a leveza e a semântica do código:
