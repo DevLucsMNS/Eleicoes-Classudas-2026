@@ -7,7 +7,7 @@ Interface oficial do Comitê Presidencial para a gestão, registro e acompanhame
 
 Este site foi criado para um específico grupo de amigos.
 
-Por questões de privacidade, as imagens dos integrantes foram removidas da versão pública.
+Por questões de privacidade (LGPD), as imagens dos integrantes foram removidas da versão pública.
 
 ---
 
